@@ -1,0 +1,80 @@
+<!DOCTYPE html>
+<html lang="en">
+<head>
+  <meta charset="UTF-8" />
+  <meta name="viewport" content="width=device-width, initial-scale=1.0" />
+  <title>Chat API & FCM Test</title>
+  <style>
+    body {
+      font-family: Arial, sans-serif;
+      padding: 20px;
+      max-width: 600px;
+      margin: auto;
+    }
+    .container {
+      margin-top: 20px;
+      padding: 15px;
+      border: 1px solid #ddd;
+      border-radius: 8px;
+      background-color: #f9f9f9;
+    }
+    button {
+      padding: 10px 20px;
+      font-size: 16px;
+      border: none;
+      background-color: #007bff;
+      color: white;
+      border-radius: 5px;
+      cursor: pointer;
+    }
+    button:hover {
+      background-color: #0056b3;
+    }
+    input, select, textarea {
+      width: 100%;
+      margin-bottom: 10px;
+      padding: 8px;
+      border: 1px solid #ddd;
+      border-radius: 5px;
+    }
+    pre {
+      background: #333;
+      color: #fff;
+      padding: 10px;
+      border-radius: 5px;
+      overflow-x: auto;
+    }
+  </style>
+</head>
+<body>
+  <h1>Chat API & FCM Test</h1>
+  <div class="container">
+    <form id="chatForm">
+      <label for="message">Message:</label>
+      <textarea id="message" name="message" required>Hello, how are u?</textarea>
+
+      <label for="modelId">Model ID:</label>
+      <input type="number" id="modelId" name="modelId" value="10" required />
+
+      <label for="modelType">Model Type:</label>
+      <select id="modelType" name="modelType" required>
+        <option value="campaign">Campaign</option>
+        <option value="response" selected>Response</option>
+      </select>
+
+      <button type="button" id="sendMessageButton">Send Message</button>
+    </form>
+
+    <h3>API Response:</h3>
+    <pre id="apiResponse">No response yet.</pre>
+
+    <h3>FCM Token:</h3>
+    <pre id="fcmTokenDisplay">No token generated yet.</pre>
+
+    <h3>Incoming Message Log:</h3>
+    <pre id="incomingMessageLog"><span>No messages yet.</span></pre>
+  </div>
+
+  <script type="module" src="app.js"></script>
+</body>
+</html>
